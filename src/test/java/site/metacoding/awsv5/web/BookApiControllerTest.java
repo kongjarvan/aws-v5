@@ -92,7 +92,6 @@ public class BookApiControllerTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
         String body = new ObjectMapper().writeValueAsString(new Book("제목3", "내용3", "메타코딩"));
         HttpEntity<String> request = new HttpEntity<String>(body, headers);
-        System.out.println("1");
 
         // 테스트 시작
         ResponseEntity<String> response = restTemplate.exchange("/api/book", HttpMethod.POST, request, String.class);
